@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.DashboardForJasperController">
+   <children>
+      <JFXButton layoutX="158.0" layoutY="200.0" onAction="#customerButtonOnAction" style="-fx-background-color: red;" text="Customer List Report" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="158.0" layoutY="108.0" onAction="#itemButtonOnAction" prefHeight="51.0" prefWidth="255.0" style="-fx-background-color: blue;" text="Item List Report" textFill="WHITE">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
