@@ -31,8 +31,20 @@ public class DashboardForJasperController {
     }
 
     @FXML
-    void itemButtonOnAction(ActionEvent event) {
-
+    void itemButtonOnAction(ActionEvent event) throws JRException {
+        JasperDesign design = JRXmlLoader.load("src/main/resources/report/Item_List_report.jrxml");
+        JasperReport jasperReport = JasperCompileManager.compileReport(design);
+        JasperPrint jasperPrint = null;
+        try {
+            jasperPrint = JasperFillManager.fillReport(jasperReport, null, DBConnection.getInstance().getConnection());
+        } catch (JRException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        JasperViewer.viewReport(jasperPrint,false);
     }
 
 }
